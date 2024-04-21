@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Indian Numbers</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Contact List</h1>
+      <ul class="contact-list" id="contactList">
+        <!-- Generated list items will be inserted here -->
+      </ul>
+    </div>
+
+    <script>
+      // JavaScript code to generate numbers and create anchor tags
+      document.addEventListener("DOMContentLoaded", function () {
+        var contactList = document.getElementById("contactList");
+
+        // Loop to generate numbers from 000 to 999
+        for (var i = 0; i <= 999; i++) {
+          var number = ("000" + i).slice(-3); // Format number with leading zeros
+
+          // Create anchor tag with telephone link
+          var listItem = document.createElement("li");
+          var anchor = document.createElement("a");
+          anchor.href =
+            "https://www.truecaller.com/search/in/+917371879" + number; // Generate tel: link
+          anchor.textContent = "7371879" + number; // Displayed text
+          anchor.target = "_blank";
+          listItem.appendChild(anchor);
+          contactList.appendChild(listItem);
+        }
+      });
+    </script>
+  </body>
+</html>
